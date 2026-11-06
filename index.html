@@ -4,528 +4,726 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-    <!-- SEO Optimization & Meta Tags -->
-    <title>Abhishek Thapa | Full-Stack Developer & Systems Engineer</title>
-    <meta name="description" content="Portfolio of Abhishek Thapa (Thunder Bird), a full-stack software engineer and founder of Nirdist Group in Nepal. Specializing in mobile apps, web systems, and IoT hardware.">
-    <meta name="keywords" content="Abhishek Thapa, software developer Nepal, mobile app developer, IoT engineer, Nirdist Group, Wash Tech Nepal, abhishekthapakshetri, Kathmandu developer">
+    <!-- SEO & Meta Tags -->
+    <title>Abhishek Thapa | Software Developer & Founder of Nirdist Group</title>
+    <meta name="description" content="Official portfolio of Abhishek Thapa, a full-stack developer, IT student, and founder of Nirdist Group in Kathmandu, Nepal. Building web platforms, mobile apps, and IoT systems.">
+    <meta name="keywords" content="Abhishek Thapa, abhishekthapakshetri, Nirdist Group, Nirdist, software developer Nepal, IT student Kathmandu, Padhmashree College, IoT developer, abhishek.name.np">
     <meta name="author" content="Abhishek Thapa">
-    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+    <meta name="robots" content="index, follow">
     <meta name="google-adsense-account" content="ca-pub-1849334684588909">
     
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://www.abhishek.name.np/">
-    <meta property="og:title" content="Abhishek Thapa | Full-Stack Developer & Systems Engineer">
-    <meta property="og:description" content="Explore the official portfolio of Abhishek Thapa. Discover projects spanning raw JavaScript backends, Flutter mobile apps, and ESP8266 IoT nodes.">
-    <meta property="og:image" content="https://abhishek.name.np/pono.png">
+    <meta property="og:title" content="Abhishek Thapa | Software Developer & Founder">
+    <meta property="og:description" content="Full-stack software developer, IT student, and founder of Nirdist Group based in Kathmandu, Nepal. Explore my code, IoT hardware builds, and travel vlogs.">
+    <meta property="og:image" content="https://www.abhishek.name.np/Assets/Images/abhishek-thapa-developer.webp">
     
-    <!-- Twitter -->
+    <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:url" content="https://www.abhishek.name.np/">
-    <meta name="twitter:title" content="Abhishek Thapa | Full-Stack Developer & Systems Engineer">
-    <meta name="twitter:description" content="Full-stack software engineer and founder of Nirdist Group in Nepal. Specializing in mobile apps, web systems, and IoT.">
-    <meta name="twitter:image" content="https://abhishek.name.np/pono.png">
-    <meta name="twitter:creator" content="@abhishekthapakshetri">
+    <meta name="twitter:title" content="Abhishek Thapa | Software Developer & Founder">
+    <meta name="twitter:description" content="Software developer and founder of Nirdist Group in Nepal. Explore my web systems, mobile apps, and IoT projects.">
+    <meta name="twitter:image" content="https://www.abhishek.name.np/Assets/Images/abhishek-thapa-developer.webp">
 
-    <!-- Icons -->
+    <!-- Icons & Canonical -->
     <link rel="icon" type="image/svg+xml" href="https://www.abhishek.name.np/Assets/Images/abhishek-thapa-developer.svg">
     <link rel="icon" type="image/png" sizes="32x32" href="https://www.abhishek.name.np/pono.png">
     <link rel="apple-touch-icon" href="https://www.abhishek.name.np/pono.png">
-    <link rel="canonical" href="https://abhishek.name.np">
+    <link rel="canonical" href="https://www.abhishek.name.np/">
 
-    <!-- Styles & Scripts -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css">
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
-    
-    <!-- Fonts: Inter for UI, JetBrains Mono for Developer Accents -->
+    <!-- Modern Tailwind CSS v3 CDN (Fixes all missing colors & broken layouts) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Plus Jakarta Sans', 'Inter', 'sans-serif'],
+                        mono: ['JetBrains Mono', 'monospace'],
+                    },
+                    colors: {
+                        brand: {
+                            50: '#eef2ff',
+                            100: '#e0e7ff',
+                            500: '#6366f1',
+                            600: '#4f46e5',
+                            700: '#4338ca',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
     <style>
         body {
-            font-family: 'Inter', sans-serif;
-            background-color: #f8fafc;
-            color: #0f172a;
+            background-color: #fafafa;
+            color: #18181b;
         }
-        .font-mono {
-            font-family: 'JetBrains Mono', monospace;
+        .bg-grid-pattern {
+            background-image: radial-gradient(#e4e4e7 1px, transparent 1px);
+            background-size: 24px 24px;
         }
-        #particles-js {
-            position: fixed;
-            width: 100%;
-            height: 100%;
-            top: 0;
-            left: 0;
-            z-index: -1;
-            background-color: #f8fafc;
+        .card-hover {
+            transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
         }
-        /* Custom Animations */
-        @keyframes slideInUp {
-            from { opacity: 0; transform: translateY(30px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-        @keyframes pulse-green {
-            0% { box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.7); }
-            70% { box-shadow: 0 0 0 6px rgba(34, 197, 94, 0); }
-            100% { box-shadow: 0 0 0 0 rgba(34, 197, 94, 0); }
-        }
-        .animate-up { animation: slideInUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards; opacity: 0; }
-        .delay-100 { animation-delay: 100ms; }
-        .delay-200 { animation-delay: 200ms; }
-        .delay-300 { animation-delay: 300ms; }
-        
-        .section-fade-in {
-            opacity: 0;
-            transform: translateY(20px);
-            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
-        }
-        .section-fade-in.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-        
-        /* Bento Box Hover Effects */
-        .bento-card {
-            transition: transform 0.2s ease, box-shadow 0.2s ease;
-            border: 1px solid #e2e8f0;
-        }
-        .bento-card:hover {
+        .card-hover:hover {
             transform: translateY(-4px);
-            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.05), 0 8px 10px -6px rgba(0, 0, 0, 0.01);
-            border-color: #cbd5e1;
+            box-shadow: 0 12px 24px -8px rgba(0, 0, 0, 0.08);
         }
-        
-        .chart-container {
+        .chart-wrapper {
             position: relative;
+            height: 320px;
             width: 100%;
-            max-width: 800px;
-            margin: 0 auto;
-            height: 400px;
         }
-        @media (min-width: 768px) { .chart-container { height: 500px; } }
     </style>
-
-    <!-- LinkedIn Profile Badge Script -->
-    <script src="https://platform.linkedin.com/badges/js/profile.js" async defer type="text/javascript"></script>
 </head>
-<body class="antialiased selection:bg-indigo-200 selection:text-indigo-900">
-    
-    <div id="particles-js"></div>
+<body class="antialiased selection:bg-brand-600 selection:text-white bg-grid-pattern">
 
-    <header id="header" class="bg-white/70 backdrop-blur-md sticky top-0 z-50 transition-all duration-300 border-b border-gray-100">
-        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
-            <a href="#" class="text-xl font-bold tracking-tight text-slate-900 flex items-center gap-2">
-                <span class="w-8 h-8 bg-indigo-600 text-white rounded-lg flex items-center justify-center font-mono text-sm">AT</span>
-                Abhishek.
+    <!-- Header Navigation -->
+    <header id="header" class="sticky top-0 z-50 bg-white/85 backdrop-blur-md border-b border-zinc-200/80 transition-all">
+        <div class="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
+            <a href="#" class="flex items-center gap-3 group">
+                <img src="https://www.abhishek.name.np/Assets/Images/abhishek-thapa-developer.webp" alt="Abhishek Thapa" class="w-9 h-9 rounded-full object-cover ring-2 ring-zinc-200 group-hover:ring-brand-600 transition" onerror="this.src='https://www.abhishek.name.np/pono.png'">
+                <span class="font-bold text-lg tracking-tight text-zinc-900">Abhishek Thapa</span>
             </a>
-            <div class="hidden md:flex items-center space-x-8 font-medium text-sm">
-                <a href="#about" class="text-slate-600 hover:text-indigo-600 transition-colors">About</a>
-                <a href="#profiles" class="text-slate-600 hover:text-indigo-600 transition-colors">Profiles</a>
-                <a href="#portfolio" class="text-slate-600 hover:text-indigo-600 transition-colors">Stack & Projects</a>
-                <a href="#creative" class="text-slate-600 hover:text-indigo-600 transition-colors">Creative</a>
-                <a href="#contact" class="bg-slate-900 text-white px-5 py-2.5 rounded-lg hover:bg-indigo-600 transition-colors">Get in touch</a>
-            </div>
-            <button id="mobile-menu-button" class="md:hidden text-slate-900 focus:outline-none" aria-label="Toggle mobile menu">
-                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+
+            <nav class="hidden md:flex items-center gap-8 text-sm font-medium text-zinc-600">
+                <a href="#about" class="hover:text-brand-600 transition">About</a>
+                <a href="#experience" class="hover:text-brand-600 transition">Experience</a>
+                <a href="#projects" class="hover:text-brand-600 transition">Projects</a>
+                <a href="#profiles" class="hover:text-brand-600 transition">Network</a>
+                <a href="#vlogs" class="hover:text-brand-600 transition">Riding & Vlogs</a>
+                <a href="#contact" class="bg-zinc-900 text-white px-4 py-2 rounded-lg hover:bg-brand-600 transition shadow-sm">Contact</a>
+            </nav>
+
+            <button id="mobile-menu-btn" class="md:hidden p-2 text-zinc-700 hover:text-zinc-900 rounded-lg" aria-label="Open Menu">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+                </svg>
             </button>
-        </nav>
-        <div id="mobile-menu" class="hidden md:hidden px-6 pb-4 space-y-3 bg-white/95 backdrop-blur-md font-medium border-t border-gray-100 pt-4">
-            <a href="#about" class="block text-slate-600">About</a>
-            <a href="#profiles" class="block text-slate-600">Profiles</a>
-            <a href="#portfolio" class="block text-slate-600">Stack & Projects</a>
-            <a href="#creative" class="block text-slate-600">Creative</a>
-            <a href="#contact" class="block text-indigo-600 mt-2">Get in touch &rarr;</a>
+        </div>
+
+        <!-- Mobile Dropdown -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-b border-zinc-200 px-6 py-4 space-y-3 text-sm font-medium text-zinc-700">
+            <a href="#about" class="block py-1 hover:text-brand-600">About</a>
+            <a href="#experience" class="block py-1 hover:text-brand-600">Experience</a>
+            <a href="#projects" class="block py-1 hover:text-brand-600">Projects</a>
+            <a href="#profiles" class="block py-1 hover:text-brand-600">Network</a>
+            <a href="#vlogs" class="block py-1 hover:text-brand-600">Riding & Vlogs</a>
+            <a href="#contact" class="block py-2 text-center bg-brand-600 text-white rounded-lg mt-2">Contact Me</a>
         </div>
     </header>
 
     <main>
         <!-- HERO SECTION -->
-        <section id="hero" class="min-h-[90vh] flex items-center relative py-20">
-            <div class="container mx-auto px-6 text-left md:text-center z-10">
-                <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-indigo-50 border border-indigo-100 text-indigo-700 text-xs font-mono font-semibold mb-8 animate-up">
-                    <span class="w-2 h-2 rounded-full bg-green-500" style="animation: pulse-green 2s infinite;"></span>
-                    Building Nirdist Group & Wash Tech Nepal
-                </div>
-                
-                <h1 class="text-5xl md:text-7xl font-extrabold text-slate-900 leading-[1.1] tracking-tight animate-up delay-100">
-                    Engineering <span class="text-transparent bg-clip-text bg-gradient-to-r from-indigo-600 to-cyan-500">Systems,</span><br class="hidden md:block"> Not Just Websites.
-                </h1>
-                
-                <p class="mt-6 text-lg md:text-xl text-slate-600 max-w-2xl mx-auto md:mx-auto animate-up delay-200 font-medium">
-                    I'm Abhishek Thapa. A full-stack developer blending raw JavaScript architectures, native mobile platforms, and bare-metal IoT hardware into scalable digital ventures.
-                </p>
-                
-                <div class="mt-10 flex flex-col md:flex-row items-start md:items-center justify-center gap-4 animate-up delay-300">
-                    <a href="#portfolio" class="bg-slate-900 text-white px-7 py-3.5 rounded-lg font-medium hover:bg-indigo-600 transition-all shadow-lg hover:shadow-indigo-500/25 w-full md:w-auto text-center">
-                        View Repositories
-                    </a>
-                    <a href="#profiles" class="px-7 py-3.5 rounded-lg font-medium text-slate-700 bg-white border border-slate-200 hover:border-indigo-200 hover:bg-indigo-50 transition-all w-full md:w-auto text-center flex items-center justify-center gap-2">
-                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path fill-rule="evenodd" d="M12 2C6.477 2 2 6.477 2 12c0 4.418 2.865 8.168 6.839 9.49.5.092.682-.217.682-.482 0-.237-.009-.868-.014-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.031-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.203 2.398.1 2.651.64.7 1.03 1.595 1.03 2.688 0 3.848-2.338 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.001 10.001 0 0022 12c0-5.523-4.477-10-10-10z" clip-rule="evenodd" /></svg>
-                        Follow my work
-                    </a>
-                </div>
-            </div>
-        </section>
-
-        <!-- PROFILES & SOCIAL EMBEDS (BENTO BOX) -->
-        <section id="profiles" class="py-20 bg-white section-fade-in border-t border-slate-100">
-            <div class="container mx-auto px-6">
-                <div class="mb-12 md:text-center">
-                    <h2 class="text-sm font-mono text-indigo-600 font-bold tracking-widest uppercase mb-2">// Digital Identity</h2>
-                    <h3 class="text-3xl md:text-4xl font-bold text-slate-900">Connect & Collaborate</h3>
-                </div>
-                
-                <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-6xl mx-auto">
-                    <!-- GitHub Profile Bento -->
-                    <div class="bento-card bg-[#0d1117] rounded-2xl p-6 relative overflow-hidden flex flex-col justify-center">
-                        <div class="absolute top-0 right-0 p-4 opacity-10">
-                            <svg class="w-24 h-24 text-white" fill="currentColor" viewBox="0 0 24 24"><path fill-rule="evenodd" d="M12 2C6.477 2 2 6.477 2 12c0 4.418 2.865 8.168 6.839 9.49.5.092.682-.217.682-.482 0-.237-.009-.868-.014-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.031-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.203 2.398.1 2.651.64.7 1.03 1.595 1.03 2.688 0 3.848-2.338 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.001 10.001 0 0022 12c0-5.523-4.477-10-10-10z" clip-rule="evenodd" /></svg>
+        <section class="py-16 md:py-24">
+            <div class="max-w-6xl mx-auto px-6">
+                <div class="grid md:grid-cols-12 gap-12 items-center">
+                    
+                    <!-- Left Column: Intro -->
+                    <div class="md:col-span-7 space-y-6">
+                        <div class="inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full bg-white border border-zinc-200 shadow-sm text-xs font-medium text-zinc-700">
+                            <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+                            <span>Founder @ <strong class="text-zinc-900">Nirdist Group</strong> &bull; Kathmandu, Nepal</span>
                         </div>
-                        <h4 class="text-white font-mono text-lg mb-4 flex items-center gap-2">
-                            <span class="text-indigo-400">~/</span>github<span class="animate-pulse">_</span>
-                        </h4>
-                        <!-- GitHub Stats Image API -->
-                        <a href="https://github.com/abhishekthapakshetri" target="_blank" rel="noopener noreferrer" class="block w-full">
-                            <img src="https://github-readme-stats.vercel.app/api?username=abhishekthapakshetri&show_icons=true&theme=dark&bg_color=0d1117&hide_border=true&title_color=6366f1&icon_color=4ade80" alt="Abhishek's GitHub Stats" class="w-full h-auto object-contain drop-shadow-md transition hover:opacity-90">
-                        </a>
-                        <a href="https://github.com/abhishekthapakshetri" target="_blank" class="mt-4 text-indigo-400 text-sm font-medium hover:text-white transition inline-flex items-center gap-1">
-                            Follow @abhishekthapakshetri &rarr;
-                        </a>
+
+                        <h1 class="text-4xl sm:text-5xl md:text-6xl font-extrabold tracking-tight text-zinc-900 leading-[1.12]">
+                            Hi, I'm Abhishek.<br>
+                            <span class="text-brand-600">I build web systems, apps & IoT gear.</span>
+                        </h1>
+
+                        <p class="text-lg text-zinc-600 leading-relaxed max-w-2xl">
+                            I'm a full-stack developer and final-year BIT student at Padhmashree College. I spend most of my time writing clean, framework-free JavaScript, building Flutter apps, and wiring up ESP8266 and Raspberry Pi sensors for real-world hardware projects.
+                        </p>
+
+                        <!-- CTA & Quick Socials -->
+                        <div class="pt-2 flex flex-wrap items-center gap-4">
+                            <a href="#projects" class="bg-zinc-900 text-white px-6 py-3 rounded-xl font-semibold text-sm hover:bg-brand-600 transition shadow-sm">
+                                Browse My Work
+                            </a>
+                            <a href="https://github.com/abhishekthapakshetri" target="_blank" rel="noopener noreferrer" class="bg-white text-zinc-800 border border-zinc-300 px-5 py-3 rounded-xl font-semibold text-sm hover:border-zinc-400 hover:bg-zinc-50 transition flex items-center gap-2">
+                                <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path fill-rule="evenodd" d="M12 2C6.477 2 2 6.477 2 12c0 4.418 2.865 8.168 6.839 9.49.5.092.682-.217.682-.482 0-.237-.009-.868-.014-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.031-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.203 2.398.1 2.651.64.7 1.03 1.595 1.03 2.688 0 3.848-2.338 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.001 10.001 0 0022 12c0-5.523-4.477-10-10-10z" clip-rule="evenodd"/></svg>
+                                GitHub
+                            </a>
+                            <a href="https://www.linkedin.com/in/abhishekthapakshetri/" target="_blank" rel="noopener noreferrer" class="bg-white text-zinc-800 border border-zinc-300 px-5 py-3 rounded-xl font-semibold text-sm hover:border-zinc-400 hover:bg-zinc-50 transition flex items-center gap-2">
+                                <svg class="w-4 h-4 text-[#0a66c2]" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.762s.784-1.762 1.75-1.762 1.75.79 1.75 1.762-.783 1.762-1.75 1.762zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+                                LinkedIn
+                            </a>
+                        </div>
                     </div>
 
-                    <!-- LinkedIn Profile Bento -->
-                    <div class="bento-card bg-[#f3f2ef] rounded-2xl p-6 flex flex-col justify-center border border-slate-200">
-                        <h4 class="text-slate-700 font-bold text-lg mb-4 flex items-center gap-2">
-                            <svg class="w-5 h-5 text-[#0a66c2]" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.762s.784-1.762 1.75-1.762 1.75.79 1.75 1.762-.783 1.762-1.75 1.762zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
-                            Professional Network
-                        </h4>
-                        <!-- Official LinkedIn Embed Code -->
-                        <div class="w-full overflow-hidden rounded-xl shadow-sm bg-white">
-                            <div class="badge-base LI-profile-badge" data-locale="en_US" data-size="medium" data-theme="light" data-type="HORIZONTAL" data-vanity="abhishekthapakshetri" data-version="v1">
-                                <!-- Fallback if script is blocked -->
-                                <a class="badge-base__link LI-simple-link px-4 py-3 block text-slate-800 font-medium hover:text-[#0a66c2]" href="https://np.linkedin.com/in/abhishekthapakshetri?trk=profile-badge">
-                                    View Abhishek Thapa's Profile on LinkedIn
+                    <!-- Right Column: Photo & Quick Card -->
+                    <div class="md:col-span-5 flex justify-center">
+                        <div class="relative w-full max-w-sm bg-white p-5 rounded-2xl border border-zinc-200 shadow-lg">
+                            <div class="aspect-square rounded-xl overflow-hidden bg-zinc-100 mb-4">
+                                <img src="https://www.abhishek.name.np/Assets/Images/abhishek-thapa-developer.webp" alt="Abhishek Thapa" class="w-full h-full object-cover" onerror="this.src='https://www.abhishek.name.np/pono.png'">
+                            </div>
+                            <div class="flex items-center justify-between">
+                                <div>
+                                    <h2 class="font-bold text-zinc-900 text-lg">Abhishek Thapa</h2>
+                                    <p class="text-xs font-mono text-zinc-500">@abhishekthapakshetri &bull; Thunder Bird</p>
+                                </div>
+                                <a href="mailto:info@abhishek.name.np" class="p-2.5 bg-brand-50 text-brand-600 rounded-lg hover:bg-brand-600 hover:text-white transition" title="Email Me">
+                                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
                                 </a>
+                            </div>
+                            <div class="mt-4 pt-4 border-t border-zinc-100 grid grid-cols-3 gap-2 text-center text-xs">
+                                <div class="bg-zinc-50 p-2 rounded-lg">
+                                    <span class="block font-bold text-zinc-900">BIT</span>
+                                    <span class="text-zinc-500">9th Sem</span>
+                                </div>
+                                <div class="bg-zinc-50 p-2 rounded-lg">
+                                    <span class="block font-bold text-zinc-900">Nirdist</span>
+                                    <span class="text-zinc-500">Founder</span>
+                                </div>
+                                <div class="bg-zinc-50 p-2 rounded-lg">
+                                    <span class="block font-bold text-zinc-900">Nepal</span>
+                                    <span class="text-zinc-500">KTM / DHI</span>
+                                </div>
                             </div>
                         </div>
                     </div>
+
                 </div>
             </div>
         </section>
 
-        <!-- ABOUT & SKILLS CHART -->
-        <section id="about" class="py-20 bg-slate-50 section-fade-in">
-            <div class="container mx-auto px-6">
-                <div class="grid lg:grid-cols-2 gap-16 items-center">
-                    <div>
-                        <h2 class="text-sm font-mono text-indigo-600 font-bold tracking-widest uppercase mb-2">// Who am I</h2>
-                        <h3 class="text-3xl md:text-4xl font-bold text-slate-900 mb-6">Bridging Hardware & Software</h3>
-                        <p class="text-lg text-slate-600 mb-4 leading-relaxed">
-                            I am <strong>Abhishek Thapa (Thunder Bird)</strong>, an IT student and entrepreneur based in Nepal. As the founder and lead software engineer of <strong>Nirdist Group</strong>, I'm focused on building scalable, real-world solutions—not just copying tutorials.
+        <!-- ABOUT & TECH STACK SECTION -->
+        <section id="about" class="py-16 bg-white border-y border-zinc-200">
+            <div class="max-w-6xl mx-auto px-6">
+                <div class="grid lg:grid-cols-12 gap-12 items-start">
+                    
+                    <!-- Bio -->
+                    <div class="lg:col-span-6 space-y-4">
+                        <span class="text-xs font-mono uppercase tracking-wider text-brand-600 font-semibold">About Me</span>
+                        <h2 class="text-3xl font-bold text-zinc-900">From web servers to soldering irons.</h2>
+                        <p class="text-zinc-600 leading-relaxed">
+                            Originally from Dhangadhi and currently based in Tinkune, Kathmandu, I got into tech because I liked taking things apart and figuring out how they work. Today, that translates into building complete products from scratch.
                         </p>
-                        <p class="text-lg text-slate-600 mb-6 leading-relaxed">
-                            My architecture style leans towards native efficiency and direct control: utilizing raw JavaScript backends, orchestrating Cloudflare networking pipelines, and developing custom physical computing nodes with ESP8266 & Raspberry Pi units for local environmental monitoring.
+                        <p class="text-zinc-600 leading-relaxed">
+                            Through <strong>Nirdist Group</strong> (<a href="https://nirdist.com.np" target="_blank" class="text-brand-600 underline hover:text-brand-700">nirdist.com.np</a>), I'm developing a custom multi-service platform featuring web search, authentication, real-time messaging, and WebRTC calling—built on raw JavaScript, Flutter, Cloudflare Workers, and Turso libSQL without bloated front-end frameworks.
                         </p>
-                        <div class="flex flex-wrap gap-2 font-mono text-xs">
-                            <span class="bg-indigo-100 text-indigo-700 px-3 py-1 rounded-md">Flutter</span>
-                            <span class="bg-indigo-100 text-indigo-700 px-3 py-1 rounded-md">Cloudflare</span>
-                            <span class="bg-indigo-100 text-indigo-700 px-3 py-1 rounded-md">ESP8266 / IoT</span>
-                            <span class="bg-indigo-100 text-indigo-700 px-3 py-1 rounded-md">Linux Systems</span>
-                            <span class="bg-indigo-100 text-indigo-700 px-3 py-1 rounded-md">Raw JS</span>
+                        <p class="text-zinc-600 leading-relaxed">
+                            On the hardware side, I work with ESP8266 NodeMCU boards, ESP-NOW protocols, and Raspberry Pi gateways to build off-grid sensor networks and early-warning telemetry systems.
+                        </p>
+
+                        <!-- Tech Pills -->
+                        <div class="pt-4">
+                            <h3 class="text-xs font-mono uppercase text-zinc-400 mb-3">Daily Tools & Technologies</h3>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="px-3 py-1.5 bg-zinc-100 text-zinc-800 rounded-lg text-xs font-medium">Vanilla JavaScript</span>
+                                <span class="px-3 py-1.5 bg-zinc-100 text-zinc-800 rounded-lg text-xs font-medium">Flutter & Dart</span>
+                                <span class="px-3 py-1.5 bg-zinc-100 text-zinc-800 rounded-lg text-xs font-medium">Cloudflare Workers</span>
+                                <span class="px-3 py-1.5 bg-zinc-100 text-zinc-800 rounded-lg text-xs font-medium">Turso (libSQL)</span>
+                                <span class="px-3 py-1.5 bg-zinc-100 text-zinc-800 rounded-lg text-xs font-medium">WebRTC & WebSockets</span>
+                                <span class="px-3 py-1.5 bg-zinc-100 text-zinc-800 rounded-lg text-xs font-medium">ESP8266 / ESP32</span>
+                                <span class="px-3 py-1.5 bg-zinc-100 text-zinc-800 rounded-lg text-xs font-medium">Raspberry Pi</span>
+                                <span class="px-3 py-1.5 bg-zinc-100 text-zinc-800 rounded-lg text-xs font-medium">Ubuntu Linux</span>
+                                <span class="px-3 py-1.5 bg-zinc-100 text-zinc-800 rounded-lg text-xs font-medium">PHP / MySQL</span>
+                                <span class="px-3 py-1.5 bg-zinc-100 text-zinc-800 rounded-lg text-xs font-medium">AWS & Networking</span>
+                            </div>
                         </div>
                     </div>
-                    
-                    <div class="bg-white p-6 md:p-8 rounded-2xl shadow-xl shadow-slate-200/50 border border-slate-100">
-                        <h4 class="font-bold text-slate-800 mb-4">Core Proficiency Matrix</h4>
-                        <div class="chart-container">
+
+                    <!-- Chart -->
+                    <div class="lg:col-span-6 bg-zinc-50 p-6 rounded-2xl border border-zinc-200">
+                        <div class="flex items-center justify-between mb-4">
+                            <h3 class="font-bold text-zinc-900">Technical Focus</h3>
+                            <span class="text-xs font-mono text-zinc-500">Hands-on Usage</span>
+                        </div>
+                        <div class="chart-wrapper">
                             <canvas id="skillsChart"></canvas>
                         </div>
                     </div>
+
                 </div>
             </div>
         </section>
 
-        <!-- PORTFOLIO -->
-        <section id="portfolio" class="py-20 bg-white section-fade-in">
-            <div class="container mx-auto px-6">
-                <div class="text-center mb-12">
-                    <h2 class="text-sm font-mono text-indigo-600 font-bold tracking-widest uppercase mb-2">// The Code</h2>
-                    <h3 class="text-3xl md:text-4xl font-bold text-slate-900">Featured Architecture</h3>
-                    <p class="mt-4 text-slate-600 max-w-2xl mx-auto">Hardware telemetry, structural system pipelines, and cloud networking projects.</p>
+        <!-- EXPERIENCE & EDUCATION TIMELINE -->
+        <section id="experience" class="py-16">
+            <div class="max-w-6xl mx-auto px-6">
+                <div class="mb-10">
+                    <span class="text-xs font-mono uppercase tracking-wider text-brand-600 font-semibold">Journey</span>
+                    <h2 class="text-3xl font-bold text-zinc-900 mt-1">What I've Been Up To</h2>
                 </div>
-                <div id="portfolio-filters" class="flex justify-center flex-wrap gap-2 mb-10 font-mono text-sm"></div>
-                <div id="github-projects" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto"></div>
-            </div>
-        </section>
 
-        <!-- CREATIVE SHOWCASE -->
-        <section id="creative" class="py-20 bg-slate-900 text-white section-fade-in">
-            <div class="container mx-auto px-6">
-                <div class="mb-12 flex flex-col md:flex-row justify-between items-end gap-6 border-b border-slate-700 pb-6">
-                    <div>
-                        <h2 class="text-sm font-mono text-indigo-400 font-bold tracking-widest uppercase mb-2">// Off Screen</h2>
-                        <h3 class="text-3xl md:text-4xl font-bold">Motorcycles & Highways</h3>
-                        <p class="mt-4 text-slate-400 max-w-xl">When I'm not configuring server tunnels or compiling code, I'm riding and documenting the highways of Nepal on my Pulsar 150.</p>
+                <div class="grid md:grid-cols-2 gap-6">
+                    <!-- Nirdist Group -->
+                    <div class="bg-white p-6 rounded-2xl border border-zinc-200 card-hover">
+                        <div class="flex items-center justify-between text-xs font-mono text-zinc-500 mb-2">
+                            <span>Founder & Lead Developer</span>
+                            <span class="px-2.5 py-0.5 bg-emerald-50 text-emerald-700 rounded-full font-medium">Active</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-zinc-900">Nirdist Group</h3>
+                        <p class="mt-2 text-sm text-zinc-600 leading-relaxed">
+                            Architecting a private multi-service digital platform (<code class="text-xs bg-zinc-100 px-1.5 py-0.5 rounded">nirdist.com.np</code>) with custom account authentication, search indexing, real-time messaging, short reels, and peer-to-peer WebRTC communication.
+                        </p>
                     </div>
-                    <a href="https://youtube.com/@abhishekthapakshetri" target="_blank" class="px-5 py-2.5 bg-red-600 hover:bg-red-700 text-white font-medium rounded-lg inline-flex items-center gap-2 transition">
-                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path fill-rule="evenodd" d="M19.812 5.418c.861.23 1.538.907 1.768 1.768C21.998 8.78 22 12 22 12s0 3.22-.42 4.814a2.506 2.506 0 0 1-1.768 1.768c-1.594.42-7.812.42-7.812.42s-6.218 0-7.812-.42a2.506 2.506 0 0 1-1.768-1.768C2 15.22 2 12 2 12s0-3.22.42-4.814a2.506 2.506 0 0 1 1.768-1.768C5.782 5 12 5 12 5s6.218 0 7.812.418zM9.57 15.57l6.427-3.57-6.427-3.57v7.14z" clip-rule="evenodd"/></svg>
-                        Subscribe
+
+                    <!-- Project ATLAS -->
+                    <div class="bg-white p-6 rounded-2xl border border-zinc-200 card-hover">
+                        <div class="flex items-center justify-between text-xs font-mono text-zinc-500 mb-2">
+                            <span>Hardware & Systems Design</span>
+                            <span class="px-2.5 py-0.5 bg-brand-50 text-brand-700 rounded-full font-medium">IoT / Field R&D</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-zinc-900">Off-Grid Early Warning System</h3>
+                        <p class="mt-2 text-sm text-zinc-600 leading-relaxed">
+                            Designing solar-powered field sensor units using NodeMCU ESP8266 boards that monitor water levels and tripwires, transmitting real-time alerts via ESP-NOW to a central Raspberry Pi gateway equipped with seismic and acoustic sensors.
+                        </p>
+                    </div>
+
+                    <!-- Education -->
+                    <div class="bg-white p-6 rounded-2xl border border-zinc-200 card-hover">
+                        <div class="flex items-center justify-between text-xs font-mono text-zinc-500 mb-2">
+                            <span>Bachelor of Information Technology (BIT)</span>
+                            <span>9th Semester</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-zinc-900">Padhmashree College</h3>
+                        <p class="mt-2 text-sm text-zinc-600 leading-relaxed">
+                            Completing my undergraduate degree in Information Technology in Koteshwor, Kathmandu. Coursework and lab focus include cloud infrastructure, IPv6 network migration, cybersecurity, and embedded microcontrollers.
+                        </p>
+                    </div>
+
+                    <!-- Community & Conferences -->
+                    <div class="bg-white p-6 rounded-2xl border border-zinc-200 card-hover">
+                        <div class="flex items-center justify-between text-xs font-mono text-zinc-500 mb-2">
+                            <span>Internet Governance & Tech Community</span>
+                            <span>2026</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-zinc-900">Youth IGF Nepal</h3>
+                        <p class="mt-2 text-sm text-zinc-600 leading-relaxed">
+                            Participant at the Youth Internet Governance Forum Nepal in Lalitpur, engaging with local engineers, policymakers, and fellow builders on digital infrastructure and technology policy in Nepal.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- GITHUB PROJECTS -->
+        <section id="projects" class="py-16 bg-white border-y border-zinc-200">
+            <div class="max-w-6xl mx-auto px-6">
+                <div class="flex flex-col md:flex-row md:items-end justify-between mb-8 gap-4">
+                    <div>
+                        <span class="text-xs font-mono uppercase tracking-wider text-brand-600 font-semibold">Open Source & Labs</span>
+                        <h2 class="text-3xl font-bold text-zinc-900 mt-1">GitHub Repositories</h2>
+                    </div>
+                    <div id="portfolio-filters" class="flex flex-wrap gap-2 text-xs font-mono"></div>
+                </div>
+
+                <div id="github-projects" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"></div>
+            </div>
+        </section>
+
+        <!-- EMBEDDED PROFILES & SOCIAL HUB -->
+        <section id="profiles" class="py-16">
+            <div class="max-w-6xl mx-auto px-6">
+                <div class="mb-10">
+                    <span class="text-xs font-mono uppercase tracking-wider text-brand-600 font-semibold">Profiles & Links</span>
+                    <h2 class="text-3xl font-bold text-zinc-900 mt-1">Find Me Around the Web</h2>
+                    <p class="text-zinc-600 mt-2">Direct embeds and links to my active developer profiles and social channels.</p>
+                </div>
+
+                <div class="grid lg:grid-cols-12 gap-6">
+                    
+                    <!-- GitHub Live Profile Card (7 cols) -->
+                    <div class="lg:col-span-7 bg-zinc-900 text-white rounded-2xl p-6 border border-zinc-800 flex flex-col justify-between card-hover">
+                        <div>
+                            <div class="flex items-center justify-between mb-6">
+                                <div class="flex items-center gap-3">
+                                    <img src="https://github.com/abhishekthapakshetri.png" alt="GitHub Avatar" class="w-12 h-12 rounded-full ring-2 ring-zinc-700" onerror="this.src='https://www.abhishek.name.np/pono.png'">
+                                    <div>
+                                        <h3 class="font-bold text-lg leading-none">Abhishek Thapa</h3>
+                                        <a href="https://github.com/abhishekthapakshetri" target="_blank" class="text-xs font-mono text-zinc-400 hover:text-brand-400">github.com/abhishekthapakshetri</a>
+                                    </div>
+                                </div>
+                                <a href="https://github.com/abhishekthapakshetri" target="_blank" rel="noopener noreferrer" class="px-3.5 py-1.5 bg-white text-zinc-900 rounded-lg text-xs font-semibold hover:bg-zinc-200 transition">
+                                    Follow on GitHub
+                                </a>
+                            </div>
+
+                            <!-- Live GitHub Contribution Chart -->
+                            <div class="bg-zinc-950 p-4 rounded-xl border border-zinc-800/80 overflow-x-auto">
+                                <p class="text-xs font-mono text-zinc-400 mb-3">Contribution Activity</p>
+                                <img src="https://ghchart.rshah.org/4f46e5/abhishekthapakshetri" alt="Abhishek's GitHub Contributions" class="w-full min-w-[480px]" loading="lazy">
+                            </div>
+                        </div>
+
+                        <div class="mt-6 pt-4 border-t border-zinc-800 flex flex-wrap items-center justify-between gap-4 text-xs text-zinc-400 font-mono">
+                            <span>Repos: IoT, Cloud, Java, Web</span>
+                            <a href="https://github.com/abhishekthapakshetri?tab=repositories" target="_blank" class="text-brand-400 hover:underline">View all repositories &rarr;</a>
+                        </div>
+                    </div>
+
+                    <!-- LinkedIn Profile Card (5 cols) -->
+                    <div class="lg:col-span-5 bg-white rounded-2xl p-6 border border-zinc-200 flex flex-col justify-between card-hover">
+                        <div>
+                            <div class="flex items-center justify-between mb-4">
+                                <span class="inline-flex items-center gap-1.5 text-xs font-semibold text-[#0a66c2]">
+                                    <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.762s.784-1.762 1.75-1.762 1.75.79 1.75 1.762-.783 1.762-1.75 1.762zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+                                    LinkedIn Profile
+                                </span>
+                                <span class="text-xs font-mono text-zinc-400">Kathmandu, Nepal</span>
+                            </div>
+
+                            <div class="flex items-center gap-4 mb-4">
+                                <img src="https://www.abhishek.name.np/Assets/Images/abhishek-thapa-developer.webp" alt="Abhishek Thapa" class="w-14 h-14 rounded-full object-cover border border-zinc-200" onerror="this.src='https://www.abhishek.name.np/pono.png'">
+                                <div>
+                                    <h3 class="font-bold text-zinc-900 text-lg">Abhishek Thapa</h3>
+                                    <p class="text-xs text-zinc-600">Founder at Nirdist Group &bull; Full-Stack Developer</p>
+                                    <p class="text-xs text-zinc-400 mt-0.5">Padhmashree College (BIT)</p>
+                                </div>
+                            </div>
+
+                            <p class="text-sm text-zinc-600 leading-relaxed bg-zinc-50 p-3.5 rounded-xl border border-zinc-100">
+                                Connect with me on LinkedIn for software collaborations, IoT research discussions, or tech roles in Nepal.
+                            </p>
+                        </div>
+
+                        <div class="mt-6">
+                            <a href="https://www.linkedin.com/in/abhishekthapakshetri/" target="_blank" rel="noopener noreferrer" class="w-full py-2.5 px-4 bg-[#0a66c2] hover:bg-[#004182] text-white font-semibold text-sm rounded-xl transition flex items-center justify-center gap-2">
+                                Connect on LinkedIn
+                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+                            </a>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- Secondary Social Links Grid -->
+                <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 mt-6">
+                    <a href="https://nirdist.com.np" target="_blank" rel="noopener noreferrer" class="bg-white p-4 rounded-xl border border-zinc-200 hover:border-brand-500 transition flex items-center gap-3 card-hover">
+                        <div class="w-10 h-10 rounded-lg bg-brand-50 text-brand-600 flex items-center justify-center font-mono font-bold">N</div>
+                        <div>
+                            <div class="text-sm font-bold text-zinc-900">Nirdist</div>
+                            <div class="text-xs text-zinc-500">nirdist.com.np</div>
+                        </div>
+                    </a>
+
+                    <a href="https://youtube.com/@abhishekthapakshetri" target="_blank" rel="noopener noreferrer" class="bg-white p-4 rounded-xl border border-zinc-200 hover:border-red-500 transition flex items-center gap-3 card-hover">
+                        <div class="w-10 h-10 rounded-lg bg-red-50 text-red-600 flex items-center justify-center">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M19.812 5.418c.861.23 1.538.907 1.768 1.768C21.998 8.78 22 12 22 12s0 3.22-.42 4.814a2.506 2.506 0 0 1-1.768 1.768c-1.594.42-7.812.42-7.812.42s-6.218 0-7.812-.42a2.506 2.506 0 0 1-1.768-1.768C2 15.22 2 12 2 12s0-3.22.42-4.814a2.506 2.506 0 0 1 1.768-1.768C5.782 5 12 5 12 5s6.218 0 7.812.418zM9.57 15.57l6.427-3.57-6.427-3.57v7.14z"/></svg>
+                        </div>
+                        <div>
+                            <div class="text-sm font-bold text-zinc-900">YouTube</div>
+                            <div class="text-xs text-zinc-500">Moto Vlogs</div>
+                        </div>
+                    </a>
+
+                    <a href="https://instagram.com/abhishekthapakshetri" target="_blank" rel="noopener noreferrer" class="bg-white p-4 rounded-xl border border-zinc-200 hover:border-pink-500 transition flex items-center gap-3 card-hover">
+                        <div class="w-10 h-10 rounded-lg bg-pink-50 text-pink-600 flex items-center justify-center">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+                        </div>
+                        <div>
+                            <div class="text-sm font-bold text-zinc-900">Instagram</div>
+                            <div class="text-xs text-zinc-500">@abhishekthapakshetri</div>
+                        </div>
+                    </a>
+
+                    <a href="https://x.com/abhishekthapakshetri" target="_blank" rel="noopener noreferrer" class="bg-white p-4 rounded-xl border border-zinc-200 hover:border-zinc-900 transition flex items-center gap-3 card-hover">
+                        <div class="w-10 h-10 rounded-lg bg-zinc-100 text-zinc-900 flex items-center justify-center">
+                            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M18.901 1.153h3.68l-8.04 9.19L24 22.846h-7.406l-5.8-7.584-6.638 7.584H.474l8.6-9.83L0 1.154h7.594l5.243 6.932ZM17.61 20.644h2.039L6.486 3.24H4.298Z"/></svg>
+                        </div>
+                        <div>
+                            <div class="text-sm font-bold text-zinc-900">X / Twitter</div>
+                            <div class="text-xs text-zinc-500">Updates</div>
+                        </div>
                     </a>
                 </div>
-                <div class="max-w-5xl mx-auto">
-                    <div class="aspect-video bg-black rounded-xl overflow-hidden shadow-2xl shadow-black/50 mb-6 border border-slate-800">
-                        <iframe id="youtube-player" class="w-full h-full" src="https://www.youtube.com/embed/o7Brnox5jlw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+        </section>
+
+        <!-- RIDING & YOUTUBE VLOGS -->
+        <section id="vlogs" class="py-16 bg-zinc-900 text-white">
+            <div class="max-w-6xl mx-auto px-6">
+                <div class="flex flex-col md:flex-row md:items-end justify-between mb-10 gap-4">
+                    <div>
+                        <span class="text-xs font-mono uppercase tracking-wider text-brand-500 font-semibold">Off the Keyboard</span>
+                        <h2 class="text-3xl font-bold mt-1">Long-Distance Rides & Vlogs</h2>
+                        <p class="text-zinc-400 mt-2 max-w-xl text-sm">
+                            When I'm not writing code or debugging circuits, I'm usually out on my blue Pulsar 150 Twin Disc riding between Kathmandu and Dhangadhi or playing futsal in Lalitpur.
+                        </p>
                     </div>
-                    <div id="youtube-gallery" class="grid grid-cols-2 md:grid-cols-4 gap-4"></div>
+                    <a href="https://youtube.com/@abhishekthapakshetri" target="_blank" rel="noopener noreferrer" class="px-4 py-2.5 bg-red-600 hover:bg-red-700 text-white text-xs font-semibold rounded-xl transition inline-flex items-center gap-2 self-start md:self-auto">
+                        <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M19.812 5.418c.861.23 1.538.907 1.768 1.768C21.998 8.78 22 12 22 12s0 3.22-.42 4.814a2.506 2.506 0 0 1-1.768 1.768c-1.594.42-7.812.42-7.812.42s-6.218 0-7.812-.42a2.506 2.506 0 0 1-1.768-1.768C2 15.22 2 12 2 12s0-3.22.42-4.814a2.506 2.506 0 0 1 1.768-1.768C5.782 5 12 5 12 5s6.218 0 7.812.418zM9.57 15.57l6.427-3.57-6.427-3.57v7.14z"/></svg>
+                        Visit YouTube Channel
+                    </a>
+                </div>
+
+                <div class="grid lg:grid-cols-12 gap-6 items-start">
+                    <div class="lg:col-span-8 aspect-video bg-black rounded-2xl overflow-hidden border border-zinc-800 shadow-xl">
+                        <iframe id="youtube-player" class="w-full h-full" src="https://www.youtube.com/embed/o7Brnox5jlw" title="Abhishek Thapa YouTube Vlog" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </div>
+                    <div id="youtube-gallery" class="lg:col-span-4 grid grid-cols-2 lg:grid-cols-1 gap-3"></div>
                 </div>
             </div>
         </section>
     </main>
 
-    <footer id="contact" class="bg-slate-950 text-slate-300 py-16 border-t border-slate-800">
-        <div class="container mx-auto px-6 max-w-4xl text-center">
-            <h2 class="text-3xl font-bold text-white mb-6">Start a Conversation</h2>
-            <p class="mb-8 text-slate-400">Open to discussing hardware/software integrations, custom architectural deployments, or technical advisory for startups.</p>
-            
-            <a href="mailto:info@abhishek.name.np" class="inline-block bg-indigo-600 text-white px-8 py-4 rounded-lg font-bold hover:bg-indigo-500 transition-colors shadow-lg hover:shadow-indigo-500/20 font-mono">
-                info@abhishek.name.np
-            </a>
-            
-            <div class="mt-12 flex justify-center space-x-6">
-                <!-- GitHub -->
-                <a href="https://github.com/abhishekthapakshetri" target="_blank" rel="noopener noreferrer" class="text-slate-400 hover:text-white transition-transform transform hover:scale-110" aria-label="GitHub profile">
-                    <svg class="w-7 h-7" fill="currentColor" viewBox="0 0 24 24"><path fill-rule="evenodd" d="M12 2C6.477 2 2 6.477 2 12c0 4.418 2.865 8.168 6.839 9.49.5.092.682-.217.682-.482 0-.237-.009-.868-.014-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.031-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.203 2.398.1 2.651.64.7 1.03 1.595 1.03 2.688 0 3.848-2.338 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.001 10.001 0 0022 12c0-5.523-4.477-10-10-10z" clip-rule="evenodd" /></svg>
+    <!-- FOOTER / CONTACT -->
+    <footer id="contact" class="bg-zinc-950 text-zinc-400 py-16 border-t border-zinc-800">
+        <div class="max-w-4xl mx-auto px-6 text-center">
+            <h2 class="text-2xl md:text-3xl font-bold text-white">Want to build something together?</h2>
+            <p class="mt-3 text-sm text-zinc-400 max-w-md mx-auto">
+                Feel free to reach out for project collaborations, full-stack development, or just to talk about IoT hardware and motorcycles.
+            </p>
+
+            <div class="mt-6 flex flex-wrap justify-center gap-4">
+                <a href="mailto:info@abhishek.name.np" class="px-6 py-3 bg-brand-600 hover:bg-brand-500 text-white font-semibold text-sm rounded-xl transition">
+                    info@abhishek.name.np
                 </a>
-                <!-- LinkedIn -->
-                <a href="https://linkedin.com/in/abhishekthapakshetri" target="_blank" rel="noopener noreferrer" class="text-slate-400 hover:text-[#0a66c2] transition-transform transform hover:scale-110" aria-label="LinkedIn profile">
-                    <svg class="w-7 h-7" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.762s.784-1.762 1.75-1.762 1.75.79 1.75 1.762-.783 1.762-1.75 1.762zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
-                </a>
-                <!-- YouTube -->
-                <a href="https://youtube.com/@abhishekthapakshetri" target="_blank" rel="noopener noreferrer" class="text-slate-400 hover:text-red-500 transition-transform transform hover:scale-110" aria-label="YouTube channel">
-                    <svg class="w-7 h-7" fill="currentColor" viewBox="0 0 24 24"><path fill-rule="evenodd" d="M19.812 5.418c.861.23 1.538.907 1.768 1.768C21.998 8.78 22 12 22 12s0 3.22-.42 4.814a2.506 2.506 0 0 1-1.768 1.768c-1.594.42-7.812.42-7.812.42s-6.218 0-7.812-.42a2.506 2.506 0 0 1-1.768-1.768C2 15.22 2 12 2 12s0-3.22.42-4.814a2.506 2.506 0 0 1 1.768-1.768C5.782 5 12 5 12 5s6.218 0 7.812.418zM9.57 15.57l6.427-3.57-6.427-3.57v7.14z" clip-rule="evenodd" /></svg>
-                </a>
-                <!-- Twitter / X -->
-                <a href="https://twitter.com/abhishekthapakshetri" target="_blank" rel="noopener noreferrer" class="text-slate-400 hover:text-white transition-transform transform hover:scale-110" aria-label="X / Twitter profile">
-                    <svg class="w-7 h-7" fill="currentColor" viewBox="0 0 24 24"><path d="M18.901 1.153h3.68l-8.04 9.19L24 22.846h-7.406l-5.8-7.584-6.638 7.584H.474l8.6-9.83L0 1.154h7.594l5.243 6.932ZM17.61 20.644h2.039L6.486 3.24H4.298Z"/></svg>
-                </a>
-                <!-- Instagram -->
-                <a href="https://instagram.com/abhishekthapakshetri" target="_blank" rel="noopener noreferrer" class="text-slate-400 hover:text-pink-500 transition-transform transform hover:scale-110" aria-label="Instagram profile">
-                    <svg class="w-7 h-7" fill="currentColor" viewBox="0 0 24 24"><path fill-rule="evenodd" d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.88z" clip-rule="evenodd"/></svg>
+                <a href="https://www.linkedin.com/in/abhishekthapakshetri/" target="_blank" rel="noopener noreferrer" class="px-6 py-3 bg-zinc-900 hover:bg-zinc-800 text-white border border-zinc-800 font-semibold text-sm rounded-xl transition">
+                    Message on LinkedIn
                 </a>
             </div>
-            
-            <div class="mt-12 pt-8 border-t border-slate-800 flex flex-col md:flex-row justify-between items-center text-sm font-mono text-slate-500">
-                <p>&copy; 2026 Abhishek Thapa. All Systems Operational.</p>
-                <p class="mt-2 md:mt-0">Founder: <a href="https://nirdist.com.np" target="_blank" class="hover:text-indigo-400">Nirdist Group</a></p>
+
+            <div class="mt-12 pt-8 border-t border-zinc-900 flex flex-col sm:flex-row items-center justify-between text-xs text-zinc-500 gap-4">
+                <p>&copy; 2026 Abhishek Thapa. Built in Kathmandu, Nepal.</p>
+                <div class="flex gap-6">
+                    <a href="https://github.com/abhishekthapakshetri" target="_blank" class="hover:text-white transition">GitHub</a>
+                    <a href="https://www.linkedin.com/in/abhishekthapakshetri/" target="_blank" class="hover:text-white transition">LinkedIn</a>
+                    <a href="https://youtube.com/@abhishekthapakshetri" target="_blank" class="hover:text-white transition">YouTube</a>
+                    <a href="https://nirdist.com.np" target="_blank" class="hover:text-white transition">Nirdist</a>
+                </div>
             </div>
         </div>
     </footer>
 
-    <!-- JSON-LD SEO Schema -->
+    <!-- Structured JSON-LD Schema for Google Search -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@type": "Person",
       "name": "Abhishek Thapa",
       "alternateName": "Thunder Bird",
-      "url": "https://www.abhishek.name.np",
+      "url": "https://www.abhishek.name.np/",
       "image": "https://www.abhishek.name.np/Assets/Images/abhishek-thapa-developer.webp",
-      "jobTitle": "Full-Stack Software Developer & Founder",
-      "description": "Information Technology student and engineering developer specializing in IoT systems, backend web architecture, and native applications.",
-      "knowsAbout": ["Software Development", "Flutter", "Cloudflare Workers", "IoT", "ESP8266", "Raspberry Pi", "JavaScript", "Systems Architecture"],
-      "alumniOf": {
-        "@type": "EducationalOrganization",
-        "name": "Padhmashree College (Nilai University)"
+      "email": "mailto:info@abhishek.name.np",
+      "jobTitle": "Founder & Full-Stack Software Developer",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Kathmandu",
+        "addressCountry": "NP"
       },
-      "worksFor": [
-        {
-          "@type": "Organization",
-          "name": "Nirdist Group",
-          "url": "https://nirdist.com.np"
-        },
-        {
-          "@type": "Organization",
-          "name": "Wash Tech Nepal Pvt. Ltd."
-        }
+      "alumniOf": {
+        "@type": "CollegeOrUniversity",
+        "name": "Padhmashree College"
+      },
+      "worksFor": {
+        "@type": "Organization",
+        "name": "Nirdist Group",
+        "url": "https://nirdist.com.np"
+      },
+      "knowsAbout": [
+        "JavaScript",
+        "Flutter",
+        "IoT",
+        "ESP8266",
+        "Raspberry Pi",
+        "Cloudflare Workers",
+        "Linux",
+        "Web Development"
       ],
       "sameAs": [
-        "https://linkedin.com/in/abhishekthapakshetri",
+        "https://www.linkedin.com/in/abhishekthapakshetri/",
         "https://github.com/abhishekthapakshetri",
         "https://youtube.com/@abhishekthapakshetri",
-        "https://twitter.com/abhishekthapakshetri",
-        "https://instagram.com/abhishekthapakshetri"
+        "https://instagram.com/abhishekthapakshetri",
+        "https://x.com/abhishekthapakshetri"
       ]
     }
     </script>
-    
+
+    <!-- Interactive Scripts -->
     <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            // Subtle, professional particles
-            particlesJS('particles-js', {
-                "particles": {
-                    "number": { "value": 40, "density": { "enable": true, "value_area": 800 } },
-                    "color": { "value": "#6366f1" }, // Indigo
-                    "shape": { "type": "circle" },
-                    "opacity": { "value": 0.3, "random": false },
-                    "size": { "value": 2, "random": true },
-                    "line_linked": { "enable": true, "distance": 180, "color": "#94a3b8", "opacity": 0.2, "width": 1 },
-                    "move": { "enable": true, "speed": 1, "direction": "none", "random": true, "out_mode": "out" }
-                },
-                "interactivity": {
-                    "detect_on": "window",
-                    "events": {
-                        "onhover": { "enable": true, "mode": "grab" },
-                        "onclick": { "enable": true, "mode": "push" },
-                        "resize": true
-                    },
-                    "modes": {
-                        "grab": { "distance": 140, "line_linked": { "opacity": 0.5 } },
-                        "push": { "particles_nb": 2 }
-                    }
-                },
-                "retina_detect": true
+        document.addEventListener('DOMContentLoaded', () => {
+            // Mobile Menu Toggle
+            const menuBtn = document.getElementById('mobile-menu-btn');
+            const mobileMenu = document.getElementById('mobile-menu');
+            menuBtn.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+            });
+            mobileMenu.querySelectorAll('a').forEach(link => {
+                link.addEventListener('click', () => mobileMenu.classList.add('hidden'));
             });
 
-            // Modern, flat-styled chart
+            // Skills Chart
             const ctx = document.getElementById('skillsChart').getContext('2d');
             new Chart(ctx, {
                 type: 'bar',
                 data: {
-                    labels: ['Raw JS / Node', 'Flutter', 'Linux / Networking', 'ESP8266 / IoT', 'Databases (SQL)'],
+                    labels: ['Vanilla JS & Web', 'Flutter / Mobile', 'ESP8266 & IoT', 'Cloud & Linux', 'SQL / Databases'],
                     datasets: [{
-                        label: 'Proficiency Level',
-                        data: [90, 85, 80, 88, 85],
+                        label: 'Experience %',
+                        data: [92, 86, 88, 80, 84],
                         backgroundColor: '#4f46e5',
-                        borderRadius: 4,
-                        barThickness: 24
+                        borderRadius: 6,
+                        barThickness: 22
                     }]
                 },
                 options: {
                     indexAxis: 'y',
                     responsive: true,
                     maintainAspectRatio: false,
-                    plugins: { legend: { display: false } },
+                    plugins: {
+                        legend: { display: false }
+                    },
                     scales: {
-                        x: { beginAtZero: true, max: 100, grid: { display: false, drawBorder: false }, ticks: { display: false } },
-                        y: { grid: { display: false, drawBorder: false }, ticks: { font: { family: "'JetBrains Mono', monospace", size: 12 }, color: '#475569' } }
+                        x: {
+                            beginAtZero: true,
+                            max: 100,
+                            grid: { color: '#e4e4e7' },
+                            ticks: { color: '#71717a', font: { size: 11 } }
+                        },
+                        y: {
+                            grid: { display: false },
+                            ticks: { color: '#18181b', font: { weight: '600', size: 12 } }
+                        }
                     }
                 }
             });
 
-            // Mobile Menu
-            const mobileMenuButton = document.getElementById('mobile-menu-button');
-            const mobileMenu = document.getElementById('mobile-menu');
-            mobileMenuButton.addEventListener('click', () => {
-                mobileMenu.classList.toggle('hidden');
-            });
-            document.querySelectorAll('#mobile-menu a').forEach(link => {
-                link.addEventListener('click', () => mobileMenu.classList.add('hidden'));
-            });
-
-            // Scroll Observer for Section Fade
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add('visible');
-                    }
-                });
-            }, { threshold: 0.1 });
-            
-            document.querySelectorAll('.section-fade-in').forEach(section => observer.observe(section));
-
-            // GitHub Repos (Updated styling to match "developer" aesthetic)
+            // GitHub Repositories Data
             const githubProjects = [
-                { title: "ESP8266 Weather Node", description: "Hardware telemetry node using ESP8266 transmitting to custom endpoints.", tags: ["IoT", "ESP8266", "C++"], link: "https://github.com/abhishekthapakshetri/ESP8266-OLED-Weather", stars: 10, forks: 3 },
-                { title: "Dual-Stack Routing Lab", description: "Configured dual-stack routing environments tracking migration protocols.", tags: ["Networking", "IPv6", "Linux"], link: "https://github.com/abhishekthapakshetri/IPv6-Migration-Worldlink", stars: 6, forks: 1 },
-                { title: "Sensor Telemetry Array", description: "Data collection protocol bridging local sensors with visual I2C displays.", tags: ["Hardware", "Arduino"], link: "https://github.com/abhishekthapakshetri/ESP8266-DHT22-LCD", stars: 12, forks: 4 },
-                { title: "Cloud Hypervisor Deployment", description: "Elastic deployment scripting for server instances and database containers.", tags: ["AWS", "Cloud", "Bash"], link: "https://github.com/abhishekthapakshetri/AWS-Cloud-Lab", stars: 9, forks: 2 },
-                { title: "Security Threat Modeling", description: "Analysis on modern encryption algorithms and network threat vectors.", tags: ["Security", "Research"], link: "https://github.com/abhishekthapakshetri/Cybersecurity-Threats-Report", stars: 8, forks: 2 },
-                { title: "Financial Logic CLI", description: "Java-based logic engine for calculating complex financial amortizations.", tags: ["Java", "CLI"], link: "https://github.com/abhishekthapakshetri/Java-EMI-Calculator", stars: 7, forks: 2 }
+                {
+                    title: "ESP8266 DHT22 with I2C LCD",
+                    description: "Microcontroller setup reading live temperature and humidity from a DHT22 sensor and outputting to an I2C LCD panel.",
+                    tags: ["IoT", "ESP8266", "C++"],
+                    link: "https://github.com/abhishekthapakshetri/ESP8266-DHT22-LCD",
+                    stars: 12,
+                    forks: 4
+                },
+                {
+                    title: "ESP8266 OLED Weather Station",
+                    description: "Compact weather monitor displaying real-time environmental readings on a 0.96-inch OLED screen.",
+                    tags: ["IoT", "ESP8266", "OLED"],
+                    link: "https://github.com/abhishekthapakshetri/ESP8266-OLED-Weather",
+                    stars: 10,
+                    forks: 3
+                },
+                {
+                    title: "AWS Cloud Lab Setup",
+                    description: "Deployed and configured an EC2 Linux instance running Apache and MySQL to host a live web application.",
+                    tags: ["AWS", "Cloud", "Linux"],
+                    link: "https://github.com/abhishekthapakshetri/AWS-Cloud-Lab",
+                    stars: 9,
+                    forks: 2
+                },
+                {
+                    title: "WorldLink IPv6 Migration Study",
+                    description: "Technical case study analyzing WorldLink Nepal's dual-stack routing transition from IPv4 to IPv6.",
+                    tags: ["Networking", "IPv6"],
+                    link: "https://github.com/abhishekthapakshetri/IPv6-Migration-Worldlink",
+                    stars: 6,
+                    forks: 1
+                },
+                {
+                    title: "Cybersecurity & Encryption Study",
+                    description: "Research report examining modern network threat vectors alongside practical encryption algorithms.",
+                    tags: ["Security", "Research"],
+                    link: "https://github.com/abhishekthapakshetri/Cybersecurity-Threats-Report",
+                    stars: 8,
+                    forks: 2
+                },
+                {
+                    title: "Java EMI Calculator",
+                    description: "Object-oriented Java utility for calculating loan EMIs and repayment schedules from user input.",
+                    tags: ["Java", "OOP"],
+                    link: "https://github.com/abhishekthapakshetri/Java-EMI-Calculator",
+                    stars: 7,
+                    forks: 2
+                }
             ];
 
             const projectsContainer = document.getElementById('github-projects');
             const filtersContainer = document.getElementById('portfolio-filters');
-            const allTags = ['All', ...new Set(githubProjects.flatMap(p => p.tags))];
+            const tags = ['All', ...new Set(githubProjects.flatMap(p => p.tags))];
 
-            function renderProjects(filter = 'All') {
+            function renderProjects(activeTag = 'All') {
                 projectsContainer.innerHTML = '';
-                const filteredProjects = filter === 'All' ? githubProjects : githubProjects.filter(p => p.tags.includes(filter));
-                
-                filteredProjects.forEach(project => {
-                    const projectEl = document.createElement('a');
-                    projectEl.href = project.link;
-                    projectEl.target = '_blank';
-                    projectEl.rel = 'noopener noreferrer';
-                    projectEl.className = 'bento-card bg-white p-6 rounded-xl flex flex-col justify-between h-full group';
-                    projectEl.innerHTML = `
+                const list = activeTag === 'All'
+                    ? githubProjects
+                    : githubProjects.filter(p => p.tags.includes(activeTag));
+
+                list.forEach(proj => {
+                    const card = document.createElement('a');
+                    card.href = proj.link;
+                    card.target = '_blank';
+                    card.rel = 'noopener noreferrer';
+                    card.className = 'bg-zinc-50 hover:bg-white p-6 rounded-2xl border border-zinc-200 flex flex-col justify-between card-hover group';
+                    card.innerHTML = `
                         <div>
-                            <div class="flex items-center justify-between mb-3">
-                                <h4 class="text-slate-900 font-bold text-lg flex items-center group-hover:text-indigo-600 transition-colors">
-                                    <svg class="w-4 h-4 mr-2 text-slate-400 group-hover:text-indigo-500" fill="currentColor" viewBox="0 0 24 24"><path fill-rule="evenodd" d="M3 2.75A2.75 2.75 0 015.75 0h14.5a.75.75 0 01.75.75v20.5a.75.75 0 01-.75.75h-6a.75.75 0 010-1.5h5.25v-4H6A1.5 1.5 0 004.5 18v.75c0 .716.43 1.334 1.05 1.605a.75.75 0 01-.6 1.374A3.25 3.25 0 013 18.75v-16zM19.5 1.5V15H6c-.546 0-1.059.146-1.5.394V2.75A1.25 1.25 0 015.75 1.5h13.75z" clip-rule="evenodd"/></svg>
-                                    ${project.title}
-                                </h4>
+                            <div class="flex items-center justify-between gap-2 mb-3">
+                                <h3 class="font-bold text-zinc-900 group-hover:text-brand-600 transition">${proj.title}</h3>
+                                <span class="text-xs font-mono text-zinc-400 shrink-0">&nearr;</span>
                             </div>
-                            <p class="text-slate-600 text-sm leading-relaxed">${project.description}</p>
+                            <p class="text-sm text-zinc-600 leading-relaxed">${proj.description}</p>
                         </div>
-                        <div class="mt-6 flex items-center justify-between">
-                            <div class="flex flex-wrap gap-2">
-                                ${project.tags.map(tag => `<span class="bg-slate-100 text-slate-600 text-xs font-mono px-2 py-1 rounded">${tag}</span>`).join('')}
+                        <div class="mt-5 pt-4 border-t border-zinc-200/70 flex items-center justify-between">
+                            <div class="flex flex-wrap gap-1.5">
+                                ${proj.tags.map(t => `<span class="px-2 py-0.5 bg-white border border-zinc-200 text-zinc-700 rounded text-xs font-mono">${t}</span>`).join('')}
                             </div>
-                            <div class="text-slate-400 text-xs font-mono flex gap-3">
-                                <span>★ ${project.stars}</span>
-                                <span>⑂ ${project.forks}</span>
+                            <div class="text-xs font-mono text-zinc-500 flex items-center gap-2.5">
+                                <span>&#9733; ${proj.stars}</span>
+                                <span>&#9906; ${proj.forks}</span>
                             </div>
-                        </div>`;
-                    projectsContainer.appendChild(projectEl);
+                        </div>
+                    `;
+                    projectsContainer.appendChild(card);
                 });
             }
 
-            allTags.forEach(tag => {
-                const button = document.createElement('button');
-                button.textContent = tag;
-                button.className = 'px-4 py-1.5 rounded-full transition-colors border';
-                if (tag === 'All') {
-                    button.classList.add('bg-slate-900', 'text-white', 'border-slate-900');
-                } else {
-                    button.classList.add('bg-white', 'text-slate-600', 'border-slate-200', 'hover:border-indigo-300', 'hover:text-indigo-600');
-                }
-                button.addEventListener('click', () => {
-                    document.querySelectorAll('#portfolio-filters button').forEach(btn => {
-                        btn.className = 'px-4 py-1.5 rounded-full transition-colors border bg-white text-slate-600 border-slate-200 hover:border-indigo-300 hover:text-indigo-600';
+            tags.forEach(tag => {
+                const btn = document.createElement('button');
+                btn.textContent = tag;
+                btn.className = tag === 'All'
+                    ? 'px-3 py-1.5 rounded-lg bg-zinc-900 text-white font-medium transition'
+                    : 'px-3 py-1.5 rounded-lg bg-zinc-100 text-zinc-600 hover:bg-zinc-200 font-medium transition';
+
+                btn.addEventListener('click', () => {
+                    filtersContainer.querySelectorAll('button').forEach(b => {
+                        b.className = 'px-3 py-1.5 rounded-lg bg-zinc-100 text-zinc-600 hover:bg-zinc-200 font-medium transition';
                     });
-                    button.className = 'px-4 py-1.5 rounded-full transition-colors border bg-slate-900 text-white border-slate-900';
+                    btn.className = 'px-3 py-1.5 rounded-lg bg-zinc-900 text-white font-medium transition';
                     renderProjects(tag);
                 });
-                filtersContainer.appendChild(button);
+                filtersContainer.appendChild(btn);
             });
 
             renderProjects();
 
-            // YouTube Videos
-            const youtubeVideos = [
-                { id: 'o7Brnox5jlw', title: 'Kathmandu To Dhangadhi 🏍️ in 1 Day' },
-                { id: 'IlfyEvQLugU', title: 'Dhangadhi to Kathmandu Ride 🛣️' },
-                { id: 'Pamgrd8ir6o', title: 'Going to Behada Baba Mela' },
-                { id: 'pEikVnY9l5Q', title: 'First Moto Vlog!' }
+            // YouTube Vlogs Playlist
+            const videos = [
+                { id: 'o7Brnox5jlw', title: 'Kathmandu To Dhangadhi in 1 Day | Vlog 7 Part 1' },
+                { id: 'IlfyEvQLugU', title: 'Dhangadhi to Kathmandu Ride | Road Update | Vlog 8' },
+                { id: 'Pamgrd8ir6o', title: 'Going to Behada Baba Mela, Dhangadhi | Vlog 9' },
+                { id: 'pEikVnY9l5Q', title: 'First Moto Vlog! Way to Tuition' }
             ];
 
-            const youtubeGallery = document.getElementById('youtube-gallery');
+            const gallery = document.getElementById('youtube-gallery');
             const player = document.getElementById('youtube-player');
 
-            youtubeVideos.forEach(video => {
-                const thumb = document.createElement('div');
-                thumb.className = 'cursor-pointer group relative rounded-lg overflow-hidden border border-slate-700 aspect-video';
-                thumb.innerHTML = `
-                    <img src="https://img.youtube.com/vi/${video.id}/mqdefault.jpg" alt="${video.title}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
-                    <div class="absolute inset-0 bg-slate-900/60 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center p-2">
-                        <svg class="w-8 h-8 text-white mb-1" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
-                    </div>`;
-                thumb.addEventListener('click', () => {
-                    player.src = `https://www.youtube.com/embed/${video.id}?autoplay=1`;
+            videos.forEach(v => {
+                const item = document.createElement('button');
+                item.type = 'button';
+                item.className = 'w-full text-left bg-zinc-800/70 hover:bg-zinc-800 p-2.5 rounded-xl border border-zinc-700/80 flex items-center gap-3 transition group';
+                item.innerHTML = `
+                    <img src="https://img.youtube.com/vi/${v.id}/mqdefault.jpg" alt="${v.title}" class="w-24 aspect-video object-cover rounded-lg shrink-0">
+                    <span class="text-xs font-medium text-zinc-200 group-hover:text-white line-clamp-2">${v.title}</span>
+                `;
+                item.addEventListener('click', () => {
+                    player.src = `https://www.youtube.com/embed/${v.id}?autoplay=1`;
                 });
-                youtubeGallery.appendChild(thumb);
+                gallery.appendChild(item);
             });
         });
     </script>
